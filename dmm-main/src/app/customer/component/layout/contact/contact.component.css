@@ -1,0 +1,35 @@
+i{
+    margin-right: 10px;
+}
+.top{
+    background-color: #696969;
+    padding: 15px;
+    font-weight: bolder;
+    color:  #FFA500;
+}
+.top span{
+    color: white !important;
+}
+.end{
+    background-color: #FFA500;
+    padding: 10px;
+    font-weight: bolder;
+    color: white;
+}
+.sum{
+    text-align: center;
+}
+input{
+    width: 95%;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: #181818   ;
+    color: white;
+    padding: 5px;
+}
+::placeholder{
+    color: white;
+}
+button{
+    margin-bottom: 50px;
+}

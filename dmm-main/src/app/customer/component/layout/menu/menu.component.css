@@ -1,0 +1,125 @@
+
+
+.card:hover{
+    cursor: pointer;
+}
+.card-title {
+    font-weight: bolder;
+}
+img{
+    height: 200px;
+}
+.title{
+    background-color:black;
+    color: white;
+    padding: 10px;
+    width: 35%;
+    margin: 0 auto;
+    transform: skew(-10deg, -10deg);
+    -moz-transform: skew(-10deg, -10deg);
+    -webkit-transform: skew(-10deg, 0deg);
+    -o-transform: skew(-10deg, -10deg);
+    -ms-transform: skew(-10deg, -10deg);
+    margin-bottom: 30px;
+}
+@media (max-width: 576px){
+    img{
+        height: 150px;
+    }
+}
+@media (max-width: 800px){
+    img{
+        height: 150px;
+    }
+   
+}
+.nk{
+    cursor: pointer;
+}
+.sale h6{
+    font-weight: bolder;
+}
+.sdt{
+    text-align: center;
+}
+.sdt button{
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.sale{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.sale span{
+    font-size: 15px;
+}
+.img i{
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 35px;
+}
+.jk{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    width: 20%;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.evaluate{
+    margin-bottom: 50px;
+}
+.evaluate .col-md-3{
+    margin:0px 40px;
+}
+/* .container :hover .card{
+    transform: scale(1.1);
+    transition: all 0.5s;
+} */
+@media (max-width: 500px) {
+    img{
+        height: 100px;
+    }
+    .cesar{
+        width: 100%;
+    }
+    .nk{
+        margin-bottom: 30px;
+    }
+    .luffy col-lg-4{
+        width: 100%;
+        height: 300px;
+    }
+    iframe{
+        height: 200px;
+    }
+    .title{
+        width: 100%;
+    }
+    .jk{
+        width: 70%;
+        text-align: center;
+    }
+   
+   
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .luffy img{
+        width: 100%;
+        height: 100px;
+    }
+    .title{
+        width: 50%;
+    }
+    .wit{
+        width: 1000px;
+        height: 100px;
+    }
+    .jk{
+        width: 30%;
+    }
+}

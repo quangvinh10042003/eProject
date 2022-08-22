@@ -1,0 +1,37 @@
+span{
+    font-size: 11px;
+}
+.form-group input{
+    padding: 25px;
+}
+
+.nk{
+    background-color: black;
+    color: white;
+}
+
+.fl label{
+    margin-right: 10px;
+}
+.fl i{
+    background-color: lightskyblue;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 10x;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.danhsach{
+    position: absolute;
+    top: 5px;
+    right: 30%;
+    opacity: 0;
+}
+.form-group.fl:hover i{
+    /* position: relative; */
+    opacity: 1;
+}

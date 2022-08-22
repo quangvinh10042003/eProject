@@ -1,0 +1,132 @@
+<div class="col-md-12 col-sm-12 pt-5">
+    <div class="title">
+        <h4 class="text-center cesar">DÒNG XE MERCEDES BENZ</h4>
+        <input type="text" class="form-control" placeholder="Tìm Kiếm Dòng Xe" [(ngModel)]="keyword">
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-sm-4 col-6" *ngFor="let item of listCate | search:keyword">
+            <div class="card text-left" (click)="navigator(item.id)" style="margin-bottom: 20px ;">
+                <img class="card-img-top" src="{{item.avatar}}" alt="">
+                <div class="card-body">
+                    <h6 class="card-title text-center">{{item.name}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div style="text-align: center;">
+        <button class="btn btn-dark" routerLink="/main" ><i class="fa-solid fa-house-chimney"></i> TẤT CẢ SẢN PHẨM</button>
+    </div> -->
+
+<div class="col-sm-12 col-sm-12 jk" routerLink="/main">
+    <div class="hm">
+        <span class="cesar"> <i class="fa-solid fa-house-chimney" style="margin-right: 10px;"></i> TẤT CẢ SẢN PHẨM</span>
+    </div>
+</div>
+
+<div class="content" style="margin-top: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="font-weight: bolder;">Trải nghiệm về Mercedes Benz G63</h4>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/KJN2qrbp43w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-6">
+                <h4 style="font-weight: bolder;">TIN TỨC & SỰ KIỆN</h4>
+                <div class="container nk luffy">
+                    <div class="row" *ngFor="let item of listEvent" routerLink="/detailEvent/{{item.id}}">
+                        <div class="col-lg-4 col-md-6">
+                            <img src="{{item.avatar}}" alt="" width="100%" style="height:110px;">
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <h6>{{item.title}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sale">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <h6>GIÁ ƯU ĐÃI - GIAO XE SỚM</h6>
+                <span style="font-weight: bold;">Mercedes-Benz</span><span> luôn cam kết mang lại mức giá ưu đãi nhất cho quý khách với thời gian giao xe sớm.</span>
+                <h6>ĐĂNG KÝ TRẢ GÓP</h6>
+                <span style="font-weight: bold;">Mercedes-Benz</span><span> liên kết với nhiều ngân hàng và sẽ hỗ trợ trả góp từ 70 – 85%, lãi suất thấp, thủ tục nhanh gọn.</span>
+                <h6>TƯ VẤN TẬN TÌNH</h6>
+                <span>Với đội ngũ tư vấn bán hàng trẻ đầy nhiệt huyết <span style="font-weight: bold;">Mercedes-Benz</span> sẽ hỗ trợ anh chị mua được chiếc xe Mercedes ưng ý.</span>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h6>KHUYẾN MÃI NHIỀU NHẤT</h6>
+                <span>Chúng tôi luôn cập nhật sớm nhất các chương trình khuyến mãi của hãng và đại lý giành cho khách hàng.</span>
+                <h6>LÁI THỬ TẬN NHÀ</h6>
+                <span>Nếu quỹ thời gian của bạn hạn hẹp, Mercedes-Benz  sẽ hỗ trợ bạn có thể trải nghiệm xe tại chính ngôi nhà của bạn!</span>
+                <h6>BẢO HÀNH TOÀN CẦU</h6>
+                <span>Quý khách hãy yên tâm về xe Mercedes mua ở Mercedes-Benz, vì chúng tôi bảo hành, bảo dưỡng và sửa chữa theo tiêu chuẩn chất lượng của Mercedes trên toàn cầu. Cung cấp phụ tùng ô tô Mercedes chính hiệu.</span>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <!-- <div class="row"> -->
+                <div class="col-md-12">
+                    <img src="https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2019/12/25/mer27.jpg" alt="" width="100%">
+                </div>
+                <div class="col-md-12" style="margin-top: 50px;">
+                    <h5 class="text-center" style="margin: 10px 0px; font-weight: bolder;">Tư Vấn Mua Xe Mercedes Benz</h5>
+                    <div class="sdt">
+                        <button class="btn btn-info"> GỌI NGAY :  0363.590.281 </button>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="evaluate">
+   <div class="container">
+    <div class="top">
+        <h4 class="text-center " style="margin-bottom: 20px ; font-weight: bolder;">ƯU ĐÃI DÀNH CHO KHÁCH HÀNG</h4>
+    <div class="row">
+        <div class="col-md-3" style="border:2px solid black;padding:15px ;border-radius: 10px;border-bottom: 2px solid red;  ">
+            <div class="img text-center"  >
+                <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            <div class="titlee text-center">
+                <h6>GIÁ CẢ CẠNH TRANH</h6>
+            </div>
+            <div class="content text-center">
+                <span > Mercedes-Benz luôn đi tiên phong về giá cả, cam kết giá rẻ nhất.</span>
+            </div>
+        </div>
+        <div class="col-md-3" style="border:2px solid black;padding:15px ;border-radius: 10px;border-bottom: 2px solid red;   ">
+            <div class="img text-center"  >
+                <i class="fa-solid fa-headphones-simple"></i>
+            </div>
+            <div class="titlee text-center">
+                <h6>HỖ TRỢ KHÁCH HÀNG</h6>
+            </div>
+            <div class="content text-center">
+                <h6 class="text-danger">Hotline : 096 996 399</h6>
+                <span>Email : mrnkt20052003@gmail.com</span>
+            </div>
+        </div>
+            <div class="col-md-3" style="border:2px solid black;padding:15px ;border-radius: 10px;border-bottom: 2px solid red; ">
+                <div class="img text-center"  >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="titlee text-center">
+                    <h6>MUA XE TRẢ GÓP</h6>
+                </div>
+                <div class="content text-center">
+                    <span > Hỗ trợ mua xe trả góp tới 100% giá xe, lãi suất thấp 0.7%/tháng</span>
+                </div>
+            </div>
+    </div>
+    </div> 
+   </div>
+</div> -->

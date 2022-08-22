@@ -1,0 +1,150 @@
+<h3 class="text-center text-danger">Thêm mới danh sách</h3>
+<div class="row">
+    <div class="col-md-4">
+        <form [formGroup]="formIn4" (ngSubmit)="formSubmit()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name" [(ngModel)]="form.name.value">
+              <div *ngIf="form.name.invalid &&(form.name.dirty||form.name.touched)" >
+                  <div *ngIf="form.name.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Category_id</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="category_id" >
+              <div *ngIf="form.category_id.invalid &&(form.category_id.dirty||form.category_id.touched)" >
+                <div *ngIf="form.category_id.errors?.['required']">
+                  <span class="text-danger font-italic">Không được để rỗng</span>
+                </div> 
+                <div *ngIf="!form.category_id.errors?.['parten']">
+                  <span class="text-danger font-italic">Chỉ được chọn từ 1-12</span>
+                </div> 
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Price</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="price" >
+              <div *ngIf="form.price.invalid &&(form.price.dirty||form.price.touched)" >
+                <div *ngIf="form.price.errors?.['required']">
+                  <span class="text-danger font-italic">Không được để rỗng</span>
+                </div> 
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Avatar</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="avatar" >
+                <div *ngIf="form.avatar.invalid &&(form.avatar.dirty||form.avatar.touched)" >
+                  <div *ngIf="form.avatar.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Size</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="size" >
+                <div *ngIf="form.size.invalid &&(form.size.dirty||form.size.touched)" >
+                  <div *ngIf="form.size.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Weight:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="weight" >
+                <div *ngIf="form.weight.invalid &&(form.weight.dirty||form.weight.touched)" >
+                  <div *ngIf="form.weight.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+                  <div *ngIf="!form.weight.errors?.['min']">
+                    <span class="text-danger font-italic">Number</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Volume:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="volume" >
+                <div *ngIf="form.volume.invalid &&(form.volume.dirty||form.volume.touched)" >
+                  <div *ngIf="form.volume.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+                  <div *ngIf="!form.volume.errors?.['min']">
+                    <span class="text-danger font-italic">Number</span>
+                  </div> 
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleInputPassword1">cylinder:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="cylinder" >
+                <div *ngIf="form.cylinder.invalid &&(form.cylinder.dirty||form.cylinder.touched)" >
+                  <div *ngIf="form.cylinder.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Gear:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="gear" >
+                <div *ngIf="form.gear.invalid &&(form.gear.dirty||form.gear.touched)" >
+                  <div *ngIf="form.gear.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Wattage:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="wattage" >
+                <div *ngIf="form.wattage.invalid &&(form.wattage.dirty||form.wattage.touched)" >
+                  <div *ngIf="form.wattage.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Maxspeed:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="maxspeed" >
+                <div *ngIf="form.maxspeed.invalid &&(form.maxspeed.dirty||form.maxspeed.touched)" >
+                  <div *ngIf="form.maxspeed.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+                  <div *ngIf="!form.maxspeed.errors?.['min']">
+                    <span class="text-danger font-italic">Min>=100</span>
+                  </div> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">capacity:</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="capacity" >
+                <div *ngIf="form.capacity.invalid &&(form.capacity.dirty||form.capacity.touched)" >
+                  <div *ngIf="form.capacity.errors?.['required']">
+                    <span class="text-danger font-italic">Không được để rỗng</span>
+                  </div> 
+                  <div *ngIf="!form.capacity.errors?.['min']">
+                    <span class="text-danger font-italic">Number</span>
+                  </div> 
+              </div>
+            </div>
+            
+         
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div class="col-md-8">
+        <div class="jumbotron">
+           <div class="row">
+                <div class="col-md-4">
+                    <img src="{{form.avatar.value}}" alt="" width="100%">
+                </div>
+                <div class="col-md-8">
+                    <h4> Name :  {{form.name.value}}</h4>
+                    <h4> Price :  {{form.price.value}}</h4>
+                    <h4> Category_id : {{form.category_id.value}}</h4>
+                   </div>
+           </div>
+           
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,188 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light nkt ">
+        <div class="container">
+            <img src="https://mercedesbenz.hanoi.vn/wp-content/uploads/2019/09/logo.png" alt="" width="180px" style="cursor: pointer;margin-right: 70px;" routerLink="/">
+
+            <button class="navbar-toggler" type="button" href="#" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active ">
+                        <a class="navbar-brand " href="#" routerLink="/">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item active ">
+                        <a class="navbar-brand" href="#" routerLink="/introduce">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="navbar-brand" href="#" routerLink="/main">SẢN PHẨM</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="navbar-brand" href="#" routerLink="/device">THIẾT BỊ</a>
+                    </li>
+
+
+                    <li class="nav-item ">
+                        <a class="navbar-brand " href="#" routerLink="/newlist">TIN TỨC</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="navbar-brand " href="#" routerLink="/contact">LIÊN HỆ</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="navbar-brand " href="#" routerLink="/signups">ĐĂNG KÍ </a>
+                    </li>
+                    <!-- <li class="nav-item ">
+           <a class="navbar-brand "href="#" routerLink="/logins"> ĐĂNG NHẬP </a>
+         </li> -->
+                    <li class="nav-item ">
+                        <a class="navbar-brand " href="#" (click)="logout() " *ngIf="contactData;else d">ĐĂNG XUẤT</a>
+
+                        <ng-template #d>
+                            <li class="nav-item ">
+                                <a class="navbar-brand " routerLink="/logins"> ĐĂNG NHẬP </a>
+                            </li>
+                        </ng-template>
+                    </li>
+                    <li class="nav-item look " *ngIf="contactData">
+                        <a class="navbar-brand">{{contactData.fullName}}  </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="navbar-brand " href="#" routerLink="/carts"> <button type="button" class="btn btn-dark" style="line-height: 100%;font-weight: bold;font-size: 13px;">
+            GIỎ HÀNG <span class="badge badge-light">{{cart}}</span>
+            <span class="sr-only">unread messages</span>
+          </button></a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="detail">
+                    <div class="title">
+                        <h2 class="font-italic">{{listProduct.name}}</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h6>Giá bán : </h6>
+                            </div>
+                            <div class="col-md-9">
+                                <h5 class="text-danger">{{listProduct.price}} VNĐ</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="end">
+
+                        <h6>Dài x Rộng x Cao (mm) : {{listProduct.size}} mm</h6>
+                        <h6> Trọng lượng không tải : {{listProduct.weight}} kg </h6>
+                        <h6>Thể tích làm việc : {{listProduct.volume}} cc </h6>
+                        <h6> Loại xy-lanh/động cơ : {{listProduct.cylinder}}</h6>
+                        <h6>Hộp số : {{listProduct.gear}}</h6>
+                        <h6> Công suất cực đại : {{listProduct.wattage}}</h6>
+                        <h6>Tốc độ tối đa : {{listProduct.maxspeed}} km/h</h6>
+                        <h6> Dung tích bình nhiên liệu : {{listProduct.capacity}} Lít</h6>
+                        <h6>{{listProduct.description}}</h6>
+                    </div>
+                </div>
+                <!-- <button class="btn btn-primary" style="padding: 10px;" routerLink="/carts"><i class="fa-solid fa-cart-arrow-down" ></i> Thêm vào giỏ hàng</button> -->
+                <div class="cart" style="display: flex;background-color: black; color: white;padding: 10px; width: 50%;line-height: 100%;border-radius: 5px;cursor: pointer;" (click)="addToCart(listProduct)">
+                    CHECK OUT
+                </div>
+            </div>
+            <div class="col-md-7">
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-container *ngFor="let slide of sliderImg">
+                        <ng-template carouselSlide [id]="slide.id">
+
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="introduce">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="title">
+                    <h6 style="margin: 10px 0px;">Tổng quan</h6>
+                    <h6 style="margin: 10px 0px;">Trải nghiệm nhịp sống của thế hệ mới</h6>
+                </div>
+                <div class="content">
+                    Khỏe khoắn ngay từ cái nhìn đầu tiên – và trên suốt hành trình: chiếc <span style="font-weight: bolder;"> {{listProduct.name}} </span> thực hiện lời hứa được cam kết bởi thiết kế. Chiếc A-Class gợi cảm xúc trên từng chuyển động nhờ
+                    cản trước mạnh mẽ, đường lượn trên hông xe gọn gàng và thậm chí đuôi xe đặc biệt hơn có tùy chọn đèn hậu hoàn toàn là đèn LED.
+                    <img src="{{listProduct.productImg}}" alt="" width="100%" height="500px">
+                </div>
+                <div class="title">
+                    <h6 style="margin: 10px 0px;">Ngoại thất – hoàn hảo với vẻ ngoài thẩm mỹ và khỏe khoắn</h6>
+                </div>
+                <div class="content">
+                    Thiết kế của chiếc {{listProduct.name}} trẻ trung và hiện đại, thậm chí gợi nhiều cảm xúc sau mẫu cập nhật: cản trước và cản sau mạnh mẽ hơn, ba dòng trang bị và thiết kế khác nhau, một gói thiết kế tùy chọn cũng như các chất liệu, màu sắc và bánh xe
+                    hợp kim mới đều cuốn hút. Mô-đun trước trong hình mũi tên rõ nét và lưới tản nhiệt kim cương độc đáo đảm bảo dáng vẻ tự tin và cái nhìn tràn đầy năng lượng. Nắp bảo vệ bộ tản nhiệt có thiết kế giống với lưới kim cương đen với đặc điểm
+                    kỹ thuật tiêu chuẩn làm nổi bật phong cách thể thao.
+                    <img src="{{listProduct.endImg}}" alt="" width="100%" height="500px">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-left">
+                    <img class="card-img-top" src="https://media.vov.vn/sites/default/files/styles/large/public/2021-11/2021-mercedes-star-in-ring-100th-anniversary-10.jpg" alt="" height="300px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title ">ĐẠI DIỆN BÁN HÀNG</h5>
+                        <h6 class="text-danger">Hotline : 0933.669.996</h6>
+                        <h6>Giá Xe, Khuyến Mại, Trả Góp, Dịch Vụ Tốt Nhất </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div style="background-color: #181818;width: 100%;  height:100% ;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="title">
+                        <h6>MERCEDES-BENZ VIỆT NAM</h6>
+                        <div class="content">
+                            <span><i class="fa-solid fa-location-pin" style="margin-right: 7px;"></i>Số 6 , Quang Trung , Hà Đông , Hà Nội</span> <br>
+                            <span><i class="fa-solid fa-location-pin" style="margin-right: 7px;"></i>Số 11 Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội</span> <br>
+                            <span><i class="fa-solid fa-location-pin" style="margin-right: 7px;"></i>Số 20 Triều Khúc, Thanh Xuân, Hà Nội</span> <br>
+                            <span style="font-weight: bolder;"> <i class="fa-solid fa-clock"></i> Giờ mở cửa : </span><span>Từ 8h00 đến 19h30 (Hoạt động cả tuần)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="title">
+                        <h6>DÒNG XE MERCEDES-BENZ</h6>
+                    </div>
+                    <div class="content">
+                        <div class="for" *ngFor="let item of listCate">
+                            <span (click)="navigator(item.id)">{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="title">
+                        <h6>MERCEDES-BENZ VIỆT NAM</h6>
+                    </div>
+                    <div class="ima">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6576008139014!2d105.78126221485455!3d21.046381985988788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3b4220c2bd%3A0x1c9e359e2a4f618c!2sB%C3%A1ch%20Khoa%20Aptech!5e0!3m2!1svi!2s!4v1656178454290!5m2!1svi!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

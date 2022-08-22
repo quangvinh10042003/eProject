@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center" style="font-weight: bolder;">ĐĂNG NHẬP</h2>
+    <div class="row">
+        <div class="col-md-6 " style="background-color:#303030 ;">
+            <img src="https://wallpapercave.com/wp/wp3980890.jpg" alt="" width="100%">
+        </div>
+        <div class="col-md-6 nkt" style="background-color:#303030; color: white;">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mật Khẩu</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+              </div>
+              <p>Bạn có tài khoản chưa ? <a style="text-decoration: none; color: orangered;" routerLink="/signup">Đăng kí </a></p>
+              <button type="submit" class="btn btn-secondary">ĐĂNG NHẬP</button>
+            </form>
+      </div>
+       
+    </div>
+</div>

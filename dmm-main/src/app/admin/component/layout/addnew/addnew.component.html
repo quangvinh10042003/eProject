@@ -1,0 +1,210 @@
+<form [formGroup]="formIn4" (ngSubmit)="formSubmit()">
+   <div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6>Tên sản phẩm : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name" placeholder="Mercedes Benz ">
+        <div *ngIf="form.name.invalid &&(form.name.dirty||form.name.touched)" >
+          <div *ngIf="form.name.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+      </div>
+      </div>
+      <div class="form-group col-md-4">
+        <div class="fl">
+          <label for="exampleInputPassword1"><h6>Danh mục sản phẩm</h6></label>
+          <!-- <i class="fa-solid fa-info"></i> -->
+        </div>
+        <input type="text" class="form-control" value="1" id="exampleInputPassword1" formControlName="category_id" placeholder="1-12">
+        <div *ngIf="form.category_id.invalid &&(form.category_id.dirty||form.category_id.touched)" >
+            <div *ngIf="form.category_id.errors?.['required']">
+              <span class="text-danger font-italic">Không được để rỗng</span>
+            </div> 
+            <div *ngIf="!form.category_id.errors?.['pattern']">
+              <span class="text-danger font-italic">Chọn từ 1-12</span>
+            </div> 
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="exampleInputPassword1"><h6>Giá</h6></label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="price" placeholder="VNĐ">
+        <div *ngIf="form.category_id.invalid &&(form.category_id.dirty||form.category_id.touched)" >
+            <div *ngIf="form.category_id.errors?.['required']">
+              <span class="text-danger font-italic">Không được để rỗng</span>
+            </div> 
+        </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6>Size: </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="size" placeholder=".../.../...">
+        <div *ngIf="form.size.invalid &&(form.size.dirty||form.size.touched)" >
+          <div *ngIf="form.size.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+      </div>
+      </div>
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6>Trọng lượng: </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="weight" placeholder="Kg">
+        <div *ngIf="form.weight.invalid &&(form.weight.dirty||form.weight.touched)" >
+          <div *ngIf="form.weight.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+          <div *ngIf="!form.weight.errors?.['Min']">
+            <span class="text-danger font-italic">Number</span>
+          </div> 
+      </div>
+      </div>
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6>Thể tích làm việc : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="volume" placeholder="cc">
+        <div *ngIf="form.volume.invalid &&(form.volume.dirty||form.volume.touched)" >
+          <div *ngIf="form.volume.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+          <div *ngIf="!form.volume.errors?.['Min']">
+            <span class="text-danger font-italic">Number</span>
+          </div> 
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6> Xi lanh động cơ : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="cyliner" placeholder="i..">
+        <div *ngIf="form.cyliner.invalid &&(form.cyliner.dirty||form.cyliner.touched)" >
+          <div *ngIf="form.cyliner.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+      </div>
+      </div>
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6> Hộp số  : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="gear" placeholder="G">
+        <div *ngIf="form.gear.invalid &&(form.gear.dirty||form.gear.touched)" >
+          <div *ngIf="form.gear.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+      </div>
+      </div>
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1"><h6> Tốc độ tối đa  : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="maxspeed" placeholder="km/h">
+        <div *ngIf="form.maxspeed.invalid &&(form.maxspeed.dirty||form.maxspeed.touched)" >
+          <div *ngIf="form.maxspeed.errors?.['required']">
+            <span class="text-danger font-italic">Không được để rỗng</span>
+          </div> 
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class="form-group col-md-4">
+      <label for="exampleInputEmail1"><h6> Công suất cực đại : </h6></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="wattage" placeholder="hp/rpm">
+      <div *ngIf="form.wattage.invalid &&(form.wattage.dirty||form.wattage.touched)" >
+        <div *ngIf="form.wattage.errors?.['required']">
+          <span class="text-danger font-italic">Không được để rỗng</span>
+        </div> 
+    </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="exampleInputEmail1"><h6> Dung tích : </h6></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="capacity" placeholder="lit">
+      <div *ngIf="form.capacity.invalid &&(form.capacity.dirty||form.capacity.touched)" >
+        <div *ngIf="form.capacity.errors?.['required']">
+          <span class="text-danger font-italic">Không được để rỗng</span>
+        </div> 
+        <div *ngIf="!form.capacity.errors?.['Min']">
+          <span class="text-danger font-italic">Number</span>
+        </div> 
+    </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="exampleInputEmail1"><h6> Mô Tả thêm  : </h6></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="description" >
+      
+    </div>
+   </div>
+   <div class="row" style="margin-bottom: 30px;">
+      <div class="formGroup col-md-4">
+        <label for="exampleInputEmail1"><h6> Ảnh sản phẩm : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="avatar">
+      </div>
+      <div  class="formGroup col-md-4">
+        <label for="exampleInputEmail1"><h6> Ảnh slide : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="productImg">
+      </div>
+      <div  class="formGroup col-md-4">
+        <label for="exampleInputEmail1"><h6> Ảnh mô tả : </h6></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="endImg">
+      </div>
+    </div>
+    <div class="row">
+        <div class="formGroup col-md-4">
+          <label for="exampleInputEmail1"><h6>Image : </h6></label>
+          <img src="{{form.avatar.value}}" alt="" height="150px" class="card-img">
+        </div>
+        <div class="formGroup col-md-4">
+          <label for="exampleInputEmail1"><h6>Image : </h6></label>
+          <img src="{{form.productImg.value}}" alt="" height="150px" class="card-img">
+        </div>
+        <div class="formGroup col-md-4">
+          <label for="exampleInputEmail1"><h6>Image : </h6></label>
+          <img src="{{form.endImg.value}}" alt="" height="150px" class="card-img">
+        </div>
+    </div>
+    
+   <div class="row">
+    <div class="col-lg-12">
+      <h4 class="mb-3">Thêm ảnh mô tả sản phẩm</h4>
+      <div class="boxQuantity mb-4">
+          <input style="width:5%;text-align: center;" type="text" value="{{quantitySlide}}" [(ngModel)]="quantitySlide" [ngModelOptions]="{standalone: true}">
+          <button type="button" class="nk" (click)="enterSlider()">Thêm</button>
+      </div>
+  </div>
+  <div class="col-lg-4" *ngFor="let item of allImg, let i = index">
+      <div class="formGroup">
+          <label for="" style="margin-right: 10px;font-weight: bold;">Ảnh {{i+1}}</label>
+          <input type="text" class="formInput" placeholder="" [(ngModel)]="item.img" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div style="width: 80%">
+          <img class="card-img" src="{{item.img}}">
+      </div>
+  </div>
+  <div class="col-lg-12 mt-4 d-none" id="setSlide">
+      <a class="btn btn-dark text-light" role="button" (click)="setSlide()" style="margin-bottom: 20px;" >Set Slide</a>
+  </div>
+  
+   </div>
+   <div class="formGroup">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" style="font-size: 10px;" formControlName="save">
+        <h6>Save</h6>
+      </label>
+    </div>
+   </div>
+  
+
+    <button type="submit" style="background-color: black;color: white;padding: 10px;margin-top:20px;font-weight: 500;">ADD PRODUCT</button>
+  </form>
+  <footer style="height: 300px;">
+
+  </footer>
+<!-- <div class="col-md-3"> -->
+  <div class="danhsach">
+    <h6>Mercedes-Benz-A : 1</h6>
+    <h6>Mercedes-Benz-C : 2</h6>
+    <h6>Mercedes-Benz-E : 3</h6>
+    <h6>Mercedes-Benz-G : 4</h6>
+    <h6>Mercedes-Benz-GLA : 5</h6>
+    <h6>Mercedes-Benz-GLC : 6</h6>
+    <h6>Mercedes-Benz-GLE : 7</h6>
+    <h6>Mercedes-Benz-GLS : 8</h6>
+    <h6>Mercedes-Benz-CLA : 9</h6>
+    <h6>Mercedes-Benz-MAYBACH : 10</h6>
+    <h6>Mercedes-Benz-Z : 11</h6>
+    <h6>Mercedes-Benz-V : 12</h6>
+  </div>
+<!-- </div> -->

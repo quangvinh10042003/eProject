@@ -1,0 +1,5 @@
+tbody tr:hover td{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
