@@ -1,0 +1,144 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main {
+    padding-top: 0px;
+}
+
+.leftMain {
+    margin-top: 40px;
+}
+
+.Box {
+    width: 100%;
+}
+
+.boxImg {
+    width: 100%;
+    margin: auto;
+}
+
+.imgBrand {
+    width: 100px;
+}
+
+.nameBrand {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.boxImgBrand {
+    width: 100px;
+    margin: auto;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.login {
+    color: blue;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.numberData {
+    font-size: 28px;
+}
+
+.borderChose {
+    border: 2px solid black !important;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.436);
+}
+
+.butToCart {
+    display: block;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px;
+    width: 300px;
+    margin: 50px auto;
+}
+
+.imgSlide {
+    max-width: 1500px;
+    max-height: 600px;
+}
+
+.h6span {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 13px;
+    }
+    .boxImg {
+        width: 100%;
+        margin: auto;
+    }
+    .main {
+        padding-top: 0px;
+    }
+    .fixedBuy {
+        font-size: 15px;
+    }
+    .butBuy {
+        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        margin-top: -9px;
+    }
+    .butBuy span {
+        color: rgb(35, 35, 35);
+        margin-left: 9px;
+    }
+    .rightButBuy {
+        margin-top: -8px;
+    }
+    .h6span {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    p {
+        font-size: 12px;
+    }
+    .autoPilot {
+        padding-top: 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    .numberData {
+        font-size: 20px;
+    }
+    .butBuy {
+        font-size: 14px;
+        width: 25px;
+        height: 25px;
+        margin-top: -10px;
+    }
+    .butBuy span {
+        color: rgb(35, 35, 35);
+        margin-left: 5px;
+        margin-top: -6px;
+    }
+    .h6span {
+        margin-top: -5px;
+    }
+    .fixedBuy {
+        font-size: 12px;
+    }
+}

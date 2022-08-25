@@ -1,3 +1,4 @@
+import { CategoryService } from './../../services/category.service';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +15,8 @@ export class DetailComponent implements OnInit {
   sliderImg: any = [];
   account: any;
   getCart: any;
-  constructor(private actRout: ActivatedRoute, private vehicalSer:ProductService) { }
+  imgBrand:any;
+  constructor(private actRout: ActivatedRoute, private vehicalSer:ProductService, private categorySer: CategoryService) { }
 
   ngOnInit(): void {
     document.documentElement.scrollTop = 0;
@@ -22,6 +24,10 @@ export class DetailComponent implements OnInit {
     this.vehicalSer.getItem(id).subscribe(data => {
       this.sliderImg = data.allImg;
       this.dataVehical = data;
+      this.categorySer.getItem(this.dataVehical.category_id).subscribe((data:any)=>{
+        this.imgBrand = data.logo;
+        console.log(this.imgBrand)
+      })
     })
   }
   chosePaint(color: string) {

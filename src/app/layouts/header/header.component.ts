@@ -26,8 +26,7 @@ export class HeaderComponent implements OnInit {
       let box = document.getElementById('modalMobile') as HTMLDivElement | null;
       let butOpenMenu = document.getElementById('butOpenMenu') as HTMLDivElement | null;
       if (!menuMobile?.contains(event.target) && !butOpenMenu?.contains(event.target)) {
-        box?.classList.add("d-none");
-        menuMobile?.classList.remove("openMenu");
+        box?.classList.add("d-none")
       }
     });
     document.addEventListener('click', function handleClickOutsideBox(event: any) {
@@ -56,9 +55,7 @@ export class HeaderComponent implements OnInit {
   }
   openMenuMobile() {
     let menu = document.getElementById('modalMobile') as HTMLDivElement | null;
-    let menuMobile = document.getElementById('menuMobile') as HTMLDivElement | null;
     menu?.classList.remove("d-none");
-    menuMobile?.classList.add('openMenu');
   }
   closeMenuMobile() {
     let menu = document.getElementById('modalMobile') as HTMLDivElement | null;

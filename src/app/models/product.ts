@@ -4,22 +4,22 @@ import { Injectable } from "@angular/core";
 })
 export class Product {
     id?: string ;
+    brand?: string;
+    year?:number;
     category_id?:number;
     description?:string;
     name?: string ;
     price?: number ;
+    bodyStyle?:string;
+    engine?:string;
+    Mileage?:number;
+    extColor?:string;
+    extImg?:string;
+    intColor?:string;
+    intImg?:string;
     imgProduct?: string ;
     allImg?:any;
-    topSpeed?: string ;
-    range?:number;
-    mph?:number;
-    wheel?:string ;
-    linkWheel?:string;
-    imgWheel?:string;
-    paint?:any; 
     interior?:string;
-    autoPilot?:string;
-    videoAutoPilot?:string;
     inHome?:boolean;
     inTopSeller?:boolean;
 }
