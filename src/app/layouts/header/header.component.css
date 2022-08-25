@@ -1,0 +1,408 @@
+* {
+    color: rgb(79, 79, 79);
+}
+
+.openMenu {
+    width: 320px !important;
+    height: 100%;
+    transition: 2000ms;
+}
+
+.closeMenuStatus {
+    width: 0px;
+}
+
+.header {
+    padding: 15px;
+    height: 68px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid gainsboro;
+    z-index: 998;
+    background-color: rgb(29, 29, 29);
+}
+
+.fakeHeadersite {
+    width: 100%;
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.header ul {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.ulCenter {
+    margin-left: 80px;
+}
+
+.ulCenter li {
+    margin-right: 10px;
+}
+
+.header li {
+    display: inline-block;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border: 1px solid rgb(29, 29, 29);
+}
+
+.logo {
+    width: 180px;
+    cursor: pointer;
+}
+
+.header li:hover {
+    background-color: rgb(33, 33, 33);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.ulRight {
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: -5px !important;
+    text-align: left !important;
+}
+
+.ulRight li {
+    padding: 7px 10px;
+    margin-right: 3px;
+}
+
+.ulRight li i {
+    color: #fff;
+}
+
+.angleDown {
+    font-size: 10px;
+}
+
+.signIn {
+    margin-top: -5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.signIn:hover ul {
+    display: block;
+    opacity: 1;
+    transition: 500ms;
+}
+
+.boxDetailSearched {
+    display: block;
+    width: 260px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 998;
+    right: 228px;
+    top: 53px;
+    max-height: 350px;
+    overflow: scroll;
+    cursor: pointer;
+    border: 1px solid rgb(227, 227, 227);
+}
+
+.openUlSignIn {
+    background-color: #fff !important;
+    border: 1px solid rgb(227, 227, 227);
+}
+
+.openUlSignIn li {
+    border: none;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    color: #000 !important;
+}
+
+.openUlSignIn li:hover {
+    border: none;
+    background-color: rgb(243, 243, 243);
+}
+
+.openUlSignIn li:last-child {
+    border-bottom: none;
+}
+
+.boxDetailSearched ul {
+    padding-left: 10px;
+    list-style: none;
+}
+
+.totalCard {
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    background-color: rgba(0, 153, 255, 0.699);
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.inputSearch {
+    width: 280px;
+    border: none;
+    border-radius: 100px;
+    /* border: 1px solid rgb(160, 160, 160); */
+    padding: 7px 20px;
+    font-size: 16px;
+}
+
+.signIn ul {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    position: absolute;
+    padding: 5px;
+    margin: 0;
+    left: 0;
+    top: 36px;
+    opacity: 0;
+    display: none;
+}
+
+.signIn ul li {
+    display: block;
+    padding: 7px 2px;
+    margin: 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(222, 222, 222);
+    border-radius: 0;
+}
+
+.signIn ul li:last-child {
+    border-bottom: none
+}
+
+.signIn ul li:hover {
+    color: black;
+}
+
+.searchLi:hover {
+    background-color: rgb(29, 29, 29) !important;
+    border: 1px solid rgb(29, 29, 29) !important;
+}
+
+.menuMobileButton {
+    margin-left: 60px;
+}
+
+.signIn ul li .searchLi:hover {
+    background-color: #fff !important;
+}
+
+.signIn:hover {
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+}
+
+.modalMenuMobile {
+    width: 100%;
+    height: 9999px;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.451);
+    top: 0;
+}
+
+.modalMenuMobile a {
+    cursor: pointer;
+    border: none;
+    margin-bottom: 1px;
+    border-bottom: 1px solid rgb(225, 226, 226);
+}
+
+.modalMenuMobile a:hover {
+    color: black;
+}
+
+.modalMenuMobile a:hover i {
+    color: black;
+}
+
+.modalMenuMobile a:last-child {
+    border: none !important;
+}
+
+.modalMenuMobile i {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 100px;
+    color: rgb(160, 160, 160);
+    text-align: center;
+    margin-right: 20px;
+}
+
+.menuMobile {
+    width: 0px;
+    height: 100%;
+    background-color: #fff;
+    float: right;
+    padding: 15px;
+    position: relative;
+    z-index: 999;
+}
+
+.menuMobile h3 {
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.closeMenu {
+    position: absolute;
+    z-index: 999;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+    border-radius: 100px;
+}
+
+.closeMenu:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+.closeMenu:hover i {
+    color: black;
+}
+
+.formSearch {
+    position: relative;
+}
+
+.formSearch i {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: rgb(33, 33, 33) !important;
+}
+
+.detailSearch {
+    list-style: none;
+    margin: 10px 0px;
+    padding: 5px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.detailSearch:last-child {
+    border-bottom: none;
+}
+
+.nameSearched {
+    font-weight: 600;
+    line-height: 14px;
+    font-size: 15px;
+}
+
+.priceSearched {
+    font-size: 14px;
+    margin-top: -15px;
+}
+
+@media screen and (max-width: 770px) {
+    .boxDetailSearched {
+        width: 260px;
+        right: 116px;
+        position: fixed;
+        border: 1px solid gainsboro;
+    }
+    .ulRight {
+        float: right;
+    }
+}
+
+.logo {
+    width: 100px;
+}
+
+.ulRight {
+    margin-top: -10px !important;
+}
+
+.inputSearch {
+    width: 260px;
+    z-index: 998;
+}
+
+.ulRight li {
+    font-size: 15px;
+}
+
+.menuMobileButton {
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .boxDetailSearched {
+        width: 300px;
+        top: 87px;
+        right: 10px;
+    }
+    .rowMenuMobile {
+        padding-right: 0px;
+        padding-left: 30px;
+    }
+    .logo {
+        width: 80px;
+    }
+    .ulRight {
+        margin-top: 0 !important;
+        padding-left: 0px;
+    }
+    .header {
+        height: 100px;
+    }
+    .fakeHeadersite {
+        height: 100px;
+    }
+    .signIn ul {
+        top: 32px;
+    }
+    .searchLi:hover {
+        background-color: #fff;
+    }
+    .inputSearch {
+        width: 285px;
+        font-size: 14px;
+        padding: 4px 20px;
+    }
+    .menuMobileButton {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+    .searchLi {
+        position: relative;
+    }
+    .ulRight li {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .menuMobileButton {
+        margin-left: 0;
+        margin-right: 10px !important;
+    }
+    .formSearch {
+        position: absolute;
+        top: 31px;
+        left: -215px;
+    }
+    .formSearch i {
+        position: absolute;
+        top: 9px;
+        right: 12px;
+    }
+}

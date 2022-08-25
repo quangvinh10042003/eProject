@@ -1,0 +1,63 @@
+<div class=" fakeHeadersite mb-4">
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-3">
+                    <div class="ml-lg-4 ml-0">
+                        <img class="logo" routerLink="/" src="https://www.carriomotorcars.com/static/dealer-21170/logo.png">
+                    </div>
+                </div>
+                <div class="col-lg-9 col-9 rowMenuMobile">
+                    <ul class="float-right ulRight">
+                        <li class="d-lg-inline-block d-none" routerLink="/shop"><a>Shop</a></li>
+                        <li class="d-lg-inline-block d-none" routerLink="/contact"><a>Contact</a></li>
+                        <li class="d-lg-inline-block d-none mr-5" routerLink="/about"><a>About Us</a></li>
+                        <li class="searchLi">
+                            <div class="formSearch">
+                                <input type="text" class="inputSearch" id="inputSearch" [(ngModel)]="keyword" placeholder="Search here" (keyup)="showBoxSearch()">
+                                <i class="fa-solid fa-magnifying-glass ml-1"></i>
+                            </div>
+                        </li>
+                        <li class="d-lg-none d-inline-block signIn menuMobileButton" (click)="openMenuMobile()" id="butOpenMenu">Menu</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalMenuMobile d-none" id="modalMobile">
+    <div class="menuMobile" id="menuMobile">
+        <h3>Menu</h3>
+        <div class="closeMenu" id="but" (click)="closeMenuMobile()">
+            <i class="fa-solid fa-x"></i>
+        </div>
+        <div class="list-group">
+            <a routerLink="/" class="list-group-item list-group-item-action"><i class="fa-solid fa-house"></i> Home</a>
+            <a routerLink="/shop" class="list-group-item list-group-item-action"><i class="fa-solid fa-bag-shopping"></i> Shop</a>
+            <a routerLink="/contact" class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
+            <a routerLink="/about" class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
+            <a routerLink="/login" class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
+        </div>
+    </div>
+</div>
+<div class="seachBox">
+    <div class="boxDetailSearched d-none" id="boxDetailSearched">
+        <div class="position-relative">
+            <ul>
+                <li class="detailSearch" routerLink="/detail/{{item.id}}" *ngFor="let item of allProduct | search:keyword">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="card-img" src="{{item.img}}" alt="">
+                        </div>
+                        <div class="col-9">
+                            <p class="nameSearched">{{item.name}}</p>
+                            <p class="priceSearched">${{item.sale}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

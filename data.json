@@ -1,0 +1,45 @@
+{
+    "product": [{
+        "name": "Model 3",
+        "category_id": 1,
+        "price": 60000,
+        "range": 375,
+        "topSpeed": 140,
+        "mph": 3.1,
+        "paint": [{
+                "color": "#ffffff"
+            },
+            {
+                "color": "black"
+            },
+            {
+                "color": "#ff0000"
+            }
+        ],
+        "imgProduct": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03e533bf-8b1d-463f-9813-9a597aafb280/bvlatuR/std/4096x2560/M3-Homepage-Desktop-LHD",
+        "interior": "https://static-assets.tesla.com/configurator/compositor?&options=$IBB1,$PMNG,$MT322&view=STUD_INTERIOR&model=m3&size=1441&bkba_opt=2&version=v0028d202206270349&crop=0,0,0,0&version=v0028d202206270349",
+        "videoAutoPilot": "https://www.tesla.com/ns_videos/model3/autopilot/navigate-on-autopilot.mp4",
+        "autoPilot": "Navigate on Autopilot, Auto Lane Change, Autopark, Summon, Smart Summon",
+        "allImg": [{
+                "id": 1,
+                "img": "https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202206230420&crop=1300,500,300,300&version=v0028d202206230420"
+            },
+            {
+                "id": 2,
+                "img": "https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PBSB,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202206230420&crop=1300,500,300,300&version=v0028d202206230420"
+            },
+            {
+                "id": 3,
+                "img": "https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPMR,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202206230420&crop=1300,500,300,300&version=v0028d202206230420"
+            }
+        ],
+        "wheel": "18inch Aero Wheels",
+        "imgWheel": "https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_S/WHEELS_TIRES/1109932-00-B_0_2000.jpg",
+        "linkWheel": "https://shop.tesla.com/product/model-3-18_-aero-wheel-and-winter-tire-package?web=true",
+        "description": "Tesla designed Model 3 from the ground-up as an electric vehicle using system-level integration throughout. Each component, including batteries, motors and even exterior aerodynamics are optimized to benefit from one another and create one of the most efficient, yet unbelievably powerful vehicles ever built. For the best long range driving experience in the coldest driving conditions, we recommend a Model 3.",
+        "id": 1,
+        "inHome": true,
+        "inTopSeller": true,
+        "inStock": true
+    }]
+}
