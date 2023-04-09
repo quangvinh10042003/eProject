@@ -1,0 +1,21 @@
+<div class="all">
+    <div class="container main mt-4">
+        <div>
+            <h1>Warranty Policy</h1>
+        </div>
+        <h3 class="mt-4 mb-2">Carrio Motor Car Extension</h3>
+        <p>For each different brand, we provide different services. All warranties have been licensed and approved by the brands below. We guarantee that all terms are enforced transparently and accurately. Any questions and errors about the product, please
+            <span class="contact" routerLink="/contact">contact our company</span> or the official manufacturer to answer and warranty the product.
+        </p>
+
+        <h3 class="mt-4 mb-2">Detailed Terms</h3>
+        <p>See detailed terms of each brand below.</p>
+        <div class=" makesNav row mt-4">
+            <div class="qNavItemAlt col-lg-2 col-md-4 col-6 " *ngFor="let item of list">
+                <a routerLink="/warranty/{{item.id}}">
+                    <img src="{{item.logo}}" alt="" class="img-responsive margin-auto lazy">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

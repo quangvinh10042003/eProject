@@ -1,0 +1,31 @@
+[{
+    "id": 1,
+    "name": "Lamborghini",
+    "logo": "https://www.carriomotorcars.com/assets/logos/transparent_black/lamborghini.png",
+    "category_id": 1
+}, {
+    "id": 2,
+    "name": "Rolls Royce",
+    "logo": "https://www.carriomotorcars.com/assets/logos/transparent_black/rolls-royce.png",
+    "category_id": 2
+}, {
+    "id": 3,
+    "name": "Aston Martin",
+    "logo": "https://www.carriomotorcars.com/static/dealer-21170/Gallery/aston_martin_transparent.png",
+    "category_id": 3
+}, {
+    "id": 4,
+    "name": "Porsche",
+    "logo": "https://www.carriomotorcars.com/assets/logos/transparent_black/porsche.png",
+    "category_id": 4
+}, {
+    "id": 5,
+    "name": "Bentley",
+    "logo": "https://www.carriomotorcars.com/assets/logos/transparent_black/bentley.png",
+    "category_id": 5
+}, {
+    "id": 6,
+    "name": "Mclaren",
+    "logo": "https://www.carriomotorcars.com/assets/logos/transparent_black/mclaren.png",
+    "category_id": 6
+}]

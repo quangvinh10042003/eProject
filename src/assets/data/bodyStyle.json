@@ -1,0 +1,21 @@
+[{
+        "id": 1,
+        "bodyStyle": " Convertible"
+    },
+    {
+        "id": 2,
+        "bodyStyle": " 2dr Car"
+    },
+    {
+        "id": 3,
+        "bodyStyle": "4dr Car"
+    },
+    {
+        "id": 4,
+        "bodyStyle": " Hatchback"
+    },
+    {
+        "id": 5,
+        "bodyStyle": "Sport Utility"
+    }
+]

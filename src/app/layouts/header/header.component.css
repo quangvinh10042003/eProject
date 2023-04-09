@@ -105,7 +105,7 @@
     border-radius: 5px;
     position: fixed;
     z-index: 998;
-    right: 228px;
+    right: 220px;
     top: 53px;
     max-height: 350px;
     overflow: scroll;
@@ -197,6 +197,7 @@
 
 .menuMobileButton {
     margin-left: 60px;
+    display: none !important;
 }
 
 .signIn ul li .searchLi:hover {
@@ -247,7 +248,7 @@
 }
 
 .menuMobile {
-    width: 0px;
+    width: 320px;
     height: 100%;
     background-color: #fff;
     float: right;
@@ -311,6 +312,19 @@
 .priceSearched {
     font-size: 14px;
     margin-top: -15px;
+}
+
+.responForLi {
+    display: inline-block;
+}
+
+@media screen and (max-width:1200px) {
+    .responForLi {
+        display: none !important;
+    }
+    .menuMobileButton {
+        display: inline-block !important;
+    }
 }
 
 @media screen and (max-width: 770px) {

@@ -1,0 +1,29 @@
+[{
+        "id": 1,
+        "intColor": "Beige"
+    },
+    {
+        "id": 2,
+        "intColor": "Black"
+    },
+    {
+        "id": 3,
+        "intColor": "Blue"
+    },
+    {
+        "id": 4,
+        "intColor": "Brown"
+    },
+    {
+        "id": 5,
+        "intColor": "Gray"
+    },
+    {
+        "id": 6,
+        "intColor": "Pink"
+    },
+    {
+        "id": 7,
+        "intColor": "White"
+    }
+]

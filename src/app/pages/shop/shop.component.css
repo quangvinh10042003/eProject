@@ -1,0 +1,454 @@
+.boxSoft {
+    width: 100%;
+    background-color: #e4e4e4;
+    padding: 10px 20px;
+    border: 1px solid gray;
+}
+
+.pageContainer {
+    height: 60px;
+}
+
+.boxNaviPage {
+    width: 100%;
+}
+
+.boxSoft label {
+    font-weight: bold;
+}
+
+.boxSoft select {
+    padding: 3px 5px;
+}
+
+.boxSoft select:focus {
+    box-shadow: 0px 0px 6px 1px rgba(1, 242, 255, 0.249);
+}
+
+.navigatePage {
+    width: 320px;
+    position: absolute;
+    right: 0;
+}
+
+.buttonPages {
+    min-width: 30px;
+    cursor: pointer;
+    text-align: center;
+    padding: 2px 5px;
+    border: 1px solid rgb(195, 195, 195);
+    color: #337ab7;
+}
+
+.buttonInPages {
+    width: 100%;
+    height: 100%;
+    line-height: 26px;
+    color: #337ab7;
+}
+
+.buttonPages:hover {
+    background: rgb(238, 238, 238) !important;
+}
+
+.product {
+    border: 2px solid #80808036;
+    background-color: #80808036;
+    margin-bottom: 20px;
+}
+
+
+/* thang ngu truong */
+
+.col-lg-5 h6 {
+    font-weight: bolder;
+}
+
+.col-lg-5 h6 span {
+    font-weight: 500;
+}
+
+.view {
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 5px;
+    background-color: #808080a8;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.view:hover {
+    color: white;
+    font-weight: 600;
+    background-color: black;
+    transition: 1s;
+}
+
+.view span {
+    font-weight: 600;
+}
+
+.mg-top {
+    margin: 30px 0px;
+}
+
+.cars {
+    width: 100%;
+    position: absolute;
+    top: -74px;
+}
+
+.allBaiLamCuaThangTruongNgu {
+    min-height: 500px;
+}
+
+.request {
+    background-color: #bd0416;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.qualified {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.product .row {
+    padding: 15px;
+}
+
+.product .col-lg-5 h5:hover {
+    color: red;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.request:hover {
+    background-color: rgb(151, 2, 2);
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.qualified:hover {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.dropdown {
+    width: 100%;
+    margin-bottom: 1px solid black;
+}
+
+nav ul li {
+    list-style: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dd_list {
+    background-color: #d0cfcf;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.dropdown ul li a {
+    color: black;
+    font-weight: 500;
+}
+
+nav ul li ul li a {
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.dd_list li a {
+    padding: 10px;
+    font-size: 15px;
+}
+
+nav ul li ul {
+    display: none;
+    transition: 10s;
+}
+
+nav ul li:hover ul {
+    display: block;
+    background-color: rgba(200, 200, 200, 0.266);
+    cursor: pointer;
+}
+
+.title {
+    width: 100%;
+    background-color: rgb(178 178 178 / 32%);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.introduce {
+    width: 100%;
+    background-color: yellow;
+}
+
+.dd_list li {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.dd_list li:hover {
+    width: 100%;
+    background-color: rgba(101, 101, 101, 0.521);
+}
+
+.bg_left {
+    height: 100%;
+}
+
+.search {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.search span {
+    font-size: 19px;
+    font-weight: 500;
+    /* color: rgb(51, 51, 51); */
+    color: white;
+}
+
+.searchCar {
+    display: flex;
+    margin: 20px 11px;
+}
+
+.searchCar .ip input {
+    padding: 8px;
+    margin-left: 10px;
+}
+
+.searchCar .icon {
+    background-color: #a40000;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.searchCar .icon i {
+    font-size: 15px;
+}
+
+.mileage {
+    background-color: pink;
+    padding: 10px;
+}
+
+.dropMenuBox {
+    background-color: gray;
+    width: 100%;
+    display: flex;
+}
+
+.dropMenuBox input {
+    padding: 1px;
+    width: 100%;
+}
+
+.search #ic {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    display: none;
+}
+
+.top span {
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-size: 300;
+}
+
+.navbar-toggler i {
+    color: white;
+}
+
+.modalMenuMobile {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .search #ic {
+        color: white;
+        font-size: 30px;
+        margin-right: 25px;
+        display: block;
+    }
+    .dropdown {
+        width: 700px;
+        display: none;
+    }
+    .searchCar {
+        display: flex;
+        margin: 20px 11px;
+    }
+    .searchCar .ip input {
+        padding: 8px;
+    }
+    .searchCar .icon {
+        background-color: #a40000;
+        padding: 8px 15px;
+        color: white;
+        cursor: pointer;
+    }
+    .searchCar .icon i {
+        font-size: 25px;
+    }
+    .modalMenuMobile {
+        width: 720px;
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 888;
+        background-color: #fff;
+        border: 1px solid black;
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.334);
+        padding: 20px;
+    }
+    .dropdown_tablet {
+        color: black;
+    }
+    .dropdown_tablet .title a {
+        color: black;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .searchCar {
+        display: none;
+    }
+    .closeMenu i {
+        font-size: 20px;
+        margin-right: 10px;
+        font-weight: 700;
+    }
+    nav ul li:hover ul {
+        display: block;
+        font-weight: 500;
+        background-color: rgba(200, 200, 200, 0.266);
+        cursor: pointer;
+    }
+    .allBaiLamCuaThangTruongNgu {
+        margin-top: 80px;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .allBaiLamCuaThangTruongNgu {
+        margin-top: 80px;
+    }
+    .modalMenuMobile {
+        width: 320px;
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 888;
+        background-color: #fff;
+        border: 1px solid black;
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.334);
+        padding: 20px;
+    }
+    .navigatePage {
+        width: 291px;
+    }
+    .search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .search #ic {
+        color: white;
+        font-size: 30px;
+        margin-right: 12px;
+        display: block;
+    }
+    .dropdown {
+        width: 700px;
+        display: none;
+    }
+    .searchCar {
+        display: flex;
+        margin: 20px 11px;
+    }
+    .searchCar .ip input {
+        padding: 8px;
+    }
+    .searchCar .icon {
+        background-color: #a40000;
+        padding: 8px 15px;
+        color: white;
+        cursor: pointer;
+    }
+    .searchCar .icon i {
+        font-size: 25px;
+    }
+    .modalMenuMobile {
+        display: block;
+    }
+    .dropdown_tablet {
+        color: black;
+    }
+    .dropdown_tablet .title a {
+        color: black;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .searchCar {
+        display: none;
+    }
+    .closeMenu i {
+        font-size: 20px;
+        margin-right: 10px;
+        font-weight: 700;
+    }
+    nav ul li:hover ul {
+        display: block;
+        font-weight: 500;
+        background-color: rgba(200, 200, 200, 0.266);
+        cursor: pointer;
+    }
+    .top span {
+        font-size: 22px;
+        margin: 20px 0px;
+        display: none;
+    }
+    .product {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .searchCar input {
+        width: 100%;
+    }
+}

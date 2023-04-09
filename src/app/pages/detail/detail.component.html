@@ -1,58 +1,207 @@
-<div class="main">
-    <div class="row">
-        <div class="col-lg-12 leftMain">
-            <owl-carousel-o [options]="OptionsSlider">
-                <ng-container *ngFor="let slide of sliderImg">
-                    <ng-template class="" carouselSlide id="{{slide.id}}">
-                        <div class="Box">
-                            <div class="boxImg">
-                                <img class="card-img imgSlide" src="{{slide.img}}">
+<div class="all">
+    <div class="container main mt-4">
+        <div class="row">
+            <div class="col-lg-12 leftMain">
+                <owl-carousel-o [options]="OptionsSlider">
+                    <ng-container *ngFor="let slide of sliderImg">
+                        <ng-template class="" carouselSlide id="{{slide.id}}">
+                            <div class="Box">
+                                <div class="boxImg">
+                                    <img class="card-img imgSlide" src="{{slide.img}}">
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+            <div class="col-lg-12 mt-5 rightMain mb-lg-5 mb-0">
+                <h1 class="text-center font-weight-bold">{{dataVehical.name}}</h1>
+                <h5 class="text-center nameBrand"><span class="font-weight-600">Brand:</span> {{dataVehical.brand}}</h5>
+                <div class="boxImgBrand mb-4">
+                    <img class="card-img" src="{{imgBrand}}" alt="">
+                </div>
+                <h5 class="text-center"><span class="font-weight-600">Price:</span> ${{dataVehical.price}}</h5>
+                <div class="row mt-4">
+                    <div class="col-4 text-center">
+                        <span class="numberData font-weight-600">{{dataVehical.bodyStyle}}</span>
+                        <p class="text-center">Body Style</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <span class="numberData font-weight-600">{{dataVehical.engine}}</span>
+                        <p class="text-center">Engine</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <span class="numberData font-weight-600">{{dataVehical.Mileage}}</span>
+                        <p class="text-center">Mileage</p>
+                    </div>
+                </div>
+                <button *ngIf="dataVehical.inStock; else elseStock" class="btn butToCart mt-3 mb-3" href="#" role="button" data-toggle="modal" data-target="#modelId">CHECKOUT</button>
+                <ng-template #elseStock>
+                    <button class="btn border border-dark btn-light text-dark butToCart mt-5 mb-5" href="#" role="button">OUT OF STOCK</button>
+                </ng-template>
+                <div class="description mt-5">
+                    <h3 class="mt-4 font-weight-600 text-center mt-5">Description</h3>
+                    <p>{{dataVehical.description}}</p>
+                </div>
+                <div class="description mt-3">
+                    <h3 class="mt-4 font-weight-600 text-center mt-5">Warranty Policy</h3>
+                    <p class="text-center warranty"><i class=" fa-solid fa-arrow-up-right-from-square "></i> {{dataVehical.brand}} warranty extention</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-5 ">
+            <div class="col-lg-6 col-md-6 ">
+                <h3 class="font-weight-600 interior text-center ">Interior</h3>
+                <img class="card-img mt-2 mb-5 " src="{{dataVehical.intImg}} " alt=" ">
+            </div>
+            <div class="col-lg-6 col-md-6 ">
+                <h3 class="font-weight-600 autoPilot text-center ">Exterior</h3>
+                <img class="card-img mt-2 mb-5 " src="{{dataVehical.extImg}} " alt=" ">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4 visitInfoBox ">
+    <h2 class="visitTitle ">VISIT OUR STORE</h2>
+    <p class="font-weight-bold ">Carrio Motor Cars</p>
+    <p class="visitTitle ">5120 North State Road 7 Fort Lauderdale, FL 33309</p>
+    <p class="font-weight-bold ">Sales: <span class="visitTitle ">954-733-7555</span></p>
+</div>
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog max-width-0 " role="document ">
+        <div class="modal-content modalCustom ">
+            <form [formGroup]="formGroup">
+                <div class="modal-header d-block ">
+                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                    <h2 class="text-center ml-4 mt-2 ">Shipping</h2>
+                </div>
+                <div class="modal-body ">
+
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">First Name</label>
+                                <input type="text" formControlName="firstname">
+                                <div class="errorSpan" *ngIf="form.firstname.invalid && (form.firstname.dirty || form.firstname.touched) " required>
+                                    <div class=" " *ngIf="form.firstname.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the first name of the consignee</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </ng-template>
-                </ng-container>
-            </owl-carousel-o>
-        </div>
-        <div class="col-lg-12 mt-5 rightMain mb-lg-5 mb-0">
-            <h1 class="text-center font-weight-bold">{{dataVehical.year}} {{dataVehical.name}}</h1>
-            <h5 class="text-center nameBrand"><span class="font-weight-600">Brand:</span> {{dataVehical.brand}}</h5>
-            <div class="boxImgBrand mb-4">
-                <img class="card-img" src="{{imgBrand}}" alt="">
-            </div>
-            <h5 class="text-center"><span class="font-weight-600">Price:</span> ${{dataVehical.price}}</h5>
-            <div class="row mt-4">
-                <div class="col-4 text-center">
-                    <span class="numberData font-weight-600">{{dataVehical.bodyStyle}}</span>
-                    <p class="text-center">Body Style</p>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">Last Name</label>
+                                <input type="text" formControlName="lastname">
+                                <div class="errorSpan " *ngIf="form.lastname.invalid && (form.lastname.dirty || form.lastname.touched) " required>
+                                    <div class=" " *ngIf="form.lastname.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the last name of the consignee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">Email</label>
+                                <input type="text " formControlName="email">
+                                <div class="errorSpan" *ngIf="form.email.invalid && (form.email.dirty || form.email.touched) " required>
+                                    <div class=" " *ngIf="form.email.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the email of the consignee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">Date of Birth</label>
+                                <input type="date" formControlName="birth">
+                                <div class="errorSpan" *ngIf="form.birth.invalid && (form.birth.dirty || form.birth.touched) " required>
+                                    <div class=" " *ngIf="form.birth.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the birth of the consignee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">Address</label>
+                                <input type="text" formControlName="address">
+                                <div class="errorSpan" *ngIf="form.address.invalid && (form.address.dirty || form.address.touched) " required>
+                                    <div class=" " *ngIf="form.address.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the address of the consignee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup">
+                                <label for=" ">City</label>
+                                <input type="text " formControlName="city">
+                                <div class="errorSpan " *ngIf="form.city.invalid && (form.city.dirty || form.city.touched) " required>
+                                    <div class=" " *ngIf="form.city.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the city of the consignee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup ">
+                                <label for=" ">Telephone Number</label>
+                                <input type="text" formControlName="telephoneNumber">
+                                <div class="errorSpan" *ngIf="form.telephoneNumber.invalid && (form.telephoneNumber.dirty || form.telephoneNumber.touched) " required>
+                                    <div class=" " *ngIf="form.telephoneNumber.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the Telephone number of the consignee</span>
+                                    </div>
+                                    <div class=" " *ngIf="form.telephoneNumber.errors?.[ 'pattern'] ">
+                                        <span class="text-danger font-italic ">*Please enter a valid telephone number</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="formGroup ">
+                                <label for=" ">Social Security Number</label>
+                                <input type="text" formControlName="socialSecurityNumber">
+                                <div class="errorSpan " *ngIf="form.socialSecurityNumber.invalid && (form.socialSecurityNumber.dirty || form.socialSecurityNumber.touched) " required>
+                                    <div class=" " *ngIf="form.socialSecurityNumber.errors?.[ 'required'] ">
+                                        <span class="text-danger font-italic ">*Please enter the Social Security Number of the consignee</span>
+                                    </div>
+                                    <div class=" " *ngIf="form.socialSecurityNumber.errors?.[ 'pattern'] ">
+                                        <span class="text-danger font-italic ">*Please enter a valid Social Security Number</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 ">
+                            <div class="row ">
+                                <div class="col-6 ">
+                                    <div class="formGroup ">
+                                        <h4 class="ml-3 mt-2 ">Subtotal: <span class="h4span">${{dataVehical.price}}</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="formGroup ">
+                                        <h4 class="ml-3 mt-2 ">Date: <span class="h4span">{{dateBuy}}</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 text-center">
-                    <span class="numberData font-weight-600">{{dataVehical.engine}}</span>
-                    <p class="text-center">Engine</p>
+                <div class="modal-footer d-block ">
+                    <div class="mt-2 ">
+                        <h2 class="text-center ">Billing</h2>
+                        <div class="boxBilling ">
+                            <div class="d-flex align-items-center ml-0 mt-2 ">
+                                <input type="checkbox" id="checkbox" (change)="checkBilling()"><label for="checkbox" class="labelCheckbox ">Billing address is the same as shipping</label>
+                            </div>
+                        </div>
+                        <button type="submit" data-dismiss="modal" class="btn btn-primary text-light checkout checkoutModal mt-3 mb-4 " (click)="buyCart()" role="button ">CHECKOUT</button>
+                    </div>
                 </div>
-                <div class="col-4 text-center">
-                    <span class="numberData font-weight-600">{{dataVehical.Mileage}}</span>
-                    <p class="text-center">Mileage</p>
-                </div>
-            </div>
-            <button *ngIf="dataVehical.inStock; else elseStock" class="btn btn-primary butToCart mt-3 mb-3" href="#" role="button">CHECKOUT</button>
-            <ng-template #elseStock>
-                <button class="btn border border-dark btn-light text-dark butToCart mt-5 mb-5" href="#" role="button">OUT OF STOCK</button>
-            </ng-template>
-            <div class="description mt-5">
-                <h3 class="mt-4 font-weight-600 text-center mt-5">Description</h3>
-                <p>{{dataVehical.description}}</p>
-            </div>
+            </form>
         </div>
     </div>
-    <div class="row mt-5 mb-5">
-        <div class="col-lg-6 col-md-6">
-            <h3 class="font-weight-600 interior text-center">Interior</h3>
-            <img class="card-img mt-2 mb-5" src="{{dataVehical.intImg}}" alt="">
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <h3 class="font-weight-600 autoPilot text-center">Exterior</h3>
-            <img class="card-img mt-2 mb-5" src="{{dataVehical.extImg}}" alt="">
-        </div>
-    </div>
-
 </div>

@@ -14,6 +14,12 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { BrandWarrantyComponent } from './pages/brand-warranty/brand-warranty.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { FinanceComponent } from './pages/finance/finance.component';
+import { WarrantyComponent } from './pages/warranty/warranty.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +30,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClockComponent,
     HomeComponent,
     FooterComponent,
-    DetailComponent
+    DetailComponent,
+    AboutComponent,
+    ContactComponent,
+    BrandWarrantyComponent,
+    ShopComponent,
+    FinanceComponent,
+    WarrantyComponent
   ],
   imports: [
     BrowserModule,

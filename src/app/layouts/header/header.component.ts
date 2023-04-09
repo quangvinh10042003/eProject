@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -16,10 +17,10 @@ export class HeaderComponent implements OnInit {
   keyword: string = '';
   acc:any;
   cartLocal:any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productService:ProductService) { }
 
   ngOnInit(): void {
-    // this.getAllProduct();
+    this.getAllProduct();
 
     document.addEventListener('click', function handleClickOutsideBox(event: any) {
       let menuMobile = document.getElementById('menuMobile') as HTMLDivElement | null;
@@ -37,11 +38,11 @@ export class HeaderComponent implements OnInit {
     });
 
   }
-  // getAllProduct() {
-  //   this.productService.getAll().subscribe((data: any) => {
-  //     this.allProduct = data;
-  //   });
-  // }
+  getAllProduct() {
+    this.productService.getAll().subscribe((data: any) => {
+      this.allProduct = data;
+    });
+  }
   SortNewProduct(a: any, b: any) {
     let typeA = a.id;
     let typeB = b.id;
@@ -77,11 +78,9 @@ export class HeaderComponent implements OnInit {
       box?.classList.remove('d-none');
     }
   }
-  login(){
-    // this.accSer.isUserLoggedIn.next(false);
-    localStorage.removeItem('cart');
-    localStorage.removeItem('loginForm');
-    localStorage.removeItem('totalCard');
-    this.router.navigate(['login']);
+  navigateToDetail(id:number){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([`detail/${id}`]);
+    });
   }
 }

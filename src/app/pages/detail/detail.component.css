@@ -1,22 +1,35 @@
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .main {
+    padding: 20px;
     padding-top: 0px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 1px rgba(133, 133, 133, 0.332);
 }
 
 .leftMain {
-    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .Box {
     width: 100%;
 }
 
+.warranty {
+    color: rgb(78, 0, 35);
+    font-size: 19px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.warranty:hover {
+    color: #980312;
+}
+
 .boxImg {
     width: 100%;
     margin: auto;
+    padding: 20px;
 }
 
 .imgBrand {
@@ -55,31 +68,140 @@
 
 .butToCart {
     display: block;
-    border-radius: 20px;
     color: #fff;
+    background-color: #bd0416;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 17px;
     padding: 10px;
     width: 300px;
     margin: 50px auto;
 }
 
+.butToCart:hover {
+    background-color: #980312;
+}
+
+.visitTitle {
+    color: #bd0416;
+}
+
 .imgSlide {
     max-width: 1500px;
-    max-height: 600px;
+}
+
+.visitInfoBox p {
+    margin-bottom: 5px;
 }
 
 .h6span {
     margin-top: 10px;
 }
 
+.modalCustom {
+    width: 1000px;
+    margin: auto;
+    position: absolute;
+    top: 20px;
+    left: -250px;
+}
+
+.formGroup {
+    padding: 10px;
+}
+
+.formGroup label {
+    margin-left: 15px;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 100px;
+    border: none;
+    border: 1px solid gainsboro;
+    font-size: 18px;
+}
+
+#checkbox {
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
+}
+
+.labelCheckbox {
+    font-size: 20px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.checkoutModal {
+    width: 400px;
+    display: block;
+    margin: auto;
+}
+
+.boxBilling {
+    width: 380px;
+    margin: auto;
+}
+
+.modalBox {
+    background-color: #980312;
+}
+
 @media screen and (max-width: 768px) {
+    .leftMain {
+        padding-top: 15px;
+        padding-bottom: 0px;
+    }
+    .modalCustom {
+        width: 740px;
+        top: 50px;
+        left: -120px;
+    }
+    .modalCustom h2 {
+        font-size: 24px;
+    }
+    .checkoutModal {
+        display: block !important;
+    }
+    .modalCustom {
+        width: 740px;
+        margin: auto;
+        margin-top: 0;
+    }
+    #checkbox {
+        width: 19px;
+        height: 19px;
+        margin-top: -10px;
+        margin-left: 20px;
+    }
+    .formGroup {
+        padding: 10px;
+    }
+    .labelCheckbox {
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    .modalCustom h2 {
+        font-size: 24px;
+    }
+    .formGroup label {
+        font-size: 15;
+    }
+    .formGroup input {
+        font-size: 14px;
+    }
+    .formGroup h4 {
+        font-size: 18px;
+    }
     p {
         font-size: 13px;
     }
     .boxImg {
         width: 100%;
         margin: auto;
+        padding: 0;
     }
     .main {
         padding-top: 0px;
@@ -106,6 +228,46 @@
 }
 
 @media screen and (max-width: 480px) {
+    .butToCart {
+        width: 280px;
+    }
+    .modalCustom {
+        width: 300px;
+        margin: auto;
+        left: 0;
+        top: 20px;
+    }
+    .modalCustom h2 {
+        font-size: 24px;
+    }
+    .boxBilling {
+        width: 240px;
+        margin: auto;
+    }
+    #checkbox {
+        width: 19px !important;
+        height: 19px !important;
+    }
+    .formGroup {
+        padding: 7px;
+    }
+    .labelCheckbox {
+        font-size: 14px;
+    }
+    .formGroup label {
+        font-size: 13px;
+    }
+    .formGroup input {
+        font-size: 13px;
+    }
+    .formGroup h4 {
+        font-size: 16px;
+    }
+    .checkoutModal {
+        width: 200px;
+        display: block;
+        margin: auto;
+    }
     p {
         font-size: 12px;
     }

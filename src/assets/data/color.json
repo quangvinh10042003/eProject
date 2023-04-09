@@ -1,0 +1,33 @@
+[{
+        "id": 1,
+        "extColor": " White"
+    },
+    {
+        "id": 2,
+        "extColor": "Black"
+    },
+    {
+        "id": 3,
+        "extColor": "Gray"
+    },
+    {
+        "id": 4,
+        "extColor": "Dark Green"
+    },
+    {
+        "id": 5,
+        "extColor": "Orange"
+    },
+    {
+        "id": 6,
+        "extColor": "Pink"
+    },
+    {
+        "id": 7,
+        "extColor": "Yellow"
+    },
+    {
+        "id": 8,
+        "extColor": "Red"
+    }
+]

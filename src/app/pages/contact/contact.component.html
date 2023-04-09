@@ -1,0 +1,308 @@
+<div style="background-color: #f5f5f5;">
+    <div class="container mt-4" style=" border: 2px solid #ffff !important;
+    box-shadow: 0px 0px 8px 1px rgba(133, 133, 133, 0.332); background-color: #fff;">
+        <section class="contentWrapper">
+            <div class="container">
+                <div id="content-description">
+                    <h1 class="header">
+                        Contact Us
+                    </h1>
+                </div>
+                <div class="contactus-page">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-8">
+                            <p class="larger margin-bottom-2x">
+                                Fill out the form below and we'll contact you shortly.
+                            </p>
+                            <form action="" [formGroup]="formSigup" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" [ngStyle]="{'color':f.userName.invalid && (f.userName.dirty || f.userName.touched )? ' red' : '#1e1e1e' }">*First
+                                                Name</label>
+                                            <input [ngStyle]="{'border':f.userName.invalid && (f.userName.dirty || f.userName.touched )? '1px solid red' : ' 1px solid  #ccc' }" type="text" id="txtfirst_name" name="FirstName" formControlName="userName" class="form-control stat-input-field" placeholder="First Name"
+                                                autocomplete="given-name">
+                                            <div *ngIf="f.userName.invalid && (f.userName.dirty || f.userName.touched )">
+                                                <div *ngIf="f.userName.errors">
+                                                    <div *ngIf="f.userName.errors.required">
+                                                        <small id="userHelp" class="form-text text-danger">This field is
+                                                            required.</small>
+                                                    </div>
+                                                    <div *ngIf="f.userName.errors.minlength">
+                                                        <small id="userHelp" class="form-text text-danger">Please enter
+                                                            at
+                                                            least 2 characters.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+                                            <label [ngStyle]="{'color':f.lastName.invalid && (f.lastName.dirty || f.lastName.touched )? ' red' : '#1e1e1e' }" class="control-label">*Last Name</label>
+                                            <input [ngStyle]="{'border':f.lastName.invalid && (f.lastName.dirty || f.lastName.touched )? '1px solid red' : ' 1px solid  #ccc' }" type="text" class="form-control stat-input-field" id="txtlast_name" name="LastName" placeholder="Last Name" autocomplete="family-name"
+                                                formControlName="lastName">
+                                            <div *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched )">
+                                                <div *ngIf="f.lastName.errors">
+                                                    <div *ngIf="f.lastName.errors.required">
+                                                        <small id="userHelp" class="form-text text-danger">This field is
+                                                            required.</small>
+                                                    </div>
+                                                    <div *ngIf="f.lastName.errors.minlength">
+                                                        <small id="userHelp" class="form-text text-danger">Please enter
+                                                            at
+                                                            least 2 characters.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+                                            <label [ngStyle]="{'color':f.email.invalid && (f.email.dirty || f.email.touched )? ' red' : '#1e1e1e' }" class="control-label" for="txtEmail">*E-Mail Address</label>
+                                            <input [ngStyle]="{'border':f.email.invalid && (f.email.dirty || f.email.touched )? '1px solid red' : ' 1px solid  #ccc' }" type="email" id="txtEmail" class="form-control stat-input-field" name="Email" placeholder="Email Address" autocomplete="email"
+                                                formControlName="email">
+
+                                            <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched )">
+                                                <div *ngIf="f.email.errors">
+                                                    <div *ngIf="f.email.errors.required">
+                                                        <small id="userHelp" class="form-text text-danger">This field is
+                                                            required.</small>
+                                                    </div>
+                                                    <div *ngIf="f.email.errors.email">
+                                                        <small id="userHelp" class="form-text text-danger">Please enter
+                                                            a
+                                                            valid email address.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+                                            <label [ngStyle]="{'color':f.phone.invalid && (f.phone.dirty || f.phone.touched )? ' red' : '#1e1e1e' }" class="control-label phoneToolTip" for="txtPhone">*Phone</label>
+                                            <input [ngStyle]="{'border':f.phone.invalid && (f.phone.dirty || f.phone.touched )? '1px solid red' : ' 1px solid  #ccc' }" type="text" class="form-control stat-input-field" id="txtlast_name" name="Phone" placeholder="Phone Number" autocomplete="family-name"
+                                                formControlName="phone">
+                                            <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched )">
+                                                <div *ngIf="f.phone.errors">
+                                                    <div *ngIf="f.phone.errors.required">
+                                                        <small id="userHelp" class="form-text text-danger">This field is
+                                                            required.</small>
+                                                    </div>
+                                                    <div *ngIf="f.phone.errors.pattern">
+                                                        <small id="userHelp" class="form-text text-danger">Please enter
+                                                            a
+                                                            valid phone number in the format </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Comments:</label>
+                                    <textarea rows="6" class="form-control stat-input-field" id="txtComments" name="Comments" placeholder="Comments"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 margin-bottom-1x">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-cta stat-button-link">Let's Talk</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <span class="required"><small>*Required Fields</small></span>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-lg-offset-1 ">
+                            <div class="row justify-content-between">
+                                <div class="col-lg-12 col-page">
+                                    <div>
+                                        <h3>Phone</h3>
+                                        <p class="phone1 tel1">
+                                            <strong>Sales: </strong>
+                                            <a class="callNowClass">954-733-7555</a>
+                                        </p>
+                                    </div>
+                                    <hr class="visible-xs visible-sm">
+                                </div>
+                                <div class="col-lg-12 col-page">
+                                    <h3>Address</h3>
+                                    <address class="margin-bottom_5x">
+                                        Carrio Motor Cars<br>
+                                        5120 North State Road 7<br>
+                                        Fort Lauderdale, FL 33309
+                                    </address>
+                                    <a class="xstat-tet-link">
+                                        <i class="fa fa-caret-right"></i> Hours and Directions
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contentWrapper">
+            <div class="container">
+                <div class="hours-page">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-7">
+                            <div id="ml-4 content-description">
+                                <h1 class="header">
+                                    Hours &amp; Directions
+                                </h1>
+                            </div>
+                            <span>
+                                <b>Carrio Motor Cars</b>
+                            </span>
+                            <br>
+                            <address>
+                                <span>5120 North State Road 7</span>
+                                <br>
+                                <span>Fort Lauderdale, FL 33309</span>
+                            </address>
+                            <address>
+                                <span>2300 North State Road 7 </span>
+                                <br>
+                                <span>Lauderdale Lakes</span>,
+                                <span>FL</span>
+                                <span>33313 </span>
+                            </address>
+                            <div id="map-details" class="margin-top" style="margin-top: 30px; margin-bottom: 30px;;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.218978687533!2d-80.20584678460597!3d26.189553997149446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9041a1a20f5f3%3A0x72494bc6cfd89265!2s5120%20N%20State%20Rd%207%2C%20Fort%20Lauderdale%2C%20FL%2033309!5e0!3m2!1sen!2sus!4v1629812699179!5m2!1sen!2sus"
+                                    frameborder="0" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-5">
+                            <div class="well well-sm">
+                                <table class="table">
+                                    <thead class="border-top-0">
+                                        <tr>
+                                            <th>Department</th>
+                                            <th>Number</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="phone1 tel1">
+                                            <td role="rowheader"><span class="phonelabel">Sales</span></td>
+                                            <td><a class="callNowClass">954-733-7555</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="well well-sm box-table">
+                                <div>
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li class="active">
+                                            <a class="font-weight-bold aHeadTable" data-loc="department hours">
+                                                Sales
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="hours-display">
+                                    <div class="tab-content">
+                                        <div class="tab-pane  active in">
+                                            <table class="table" tabindex="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Day</strong></th>
+                                                        <td><strong>Open</strong></td>
+                                                        <td><strong>Closed</strong></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="mondayHoursRow">
+                                                        <td class="mondayHoursLabel">
+                                                            Monday
+                                                        </td>
+                                                        <td class="mondayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="mondayHoursClose">
+                                                            6:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tuesdayHoursRow">
+                                                        <td class="tuesdayHoursLabel" role="rowheader">
+                                                            Tuesday
+                                                        </td>
+                                                        <td class="tuesdayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="tuesdayHoursClose">
+                                                            6:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="wednesdayHoursRow">
+                                                        <td class="wednesdayHoursLabel" role="rowheader">
+                                                            Wednesday
+                                                        </td>
+                                                        <td class="wednesdayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="wednesdayHoursClose">
+                                                            6:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thursdayHoursRow">
+                                                        <td class="thursdayHoursLabel" role="rowheader">
+                                                            <i class="fa fa-caret-right text-muted pad-right_5x"></i> Thursday
+                                                        </td>
+                                                        <td class="thursdayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="thursdayHoursClose">
+                                                            6:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="fridayHoursRow">
+                                                        <td class="fridayHoursLabel" role="rowheader">
+                                                            Friday
+                                                        </td>
+                                                        <td class="fridayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="fridayHoursClose">
+                                                            6:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="saturdayHoursRow">
+                                                        <td class="saturdayHoursLabel" role="rowheader">
+                                                            Saturday
+                                                        </td>
+                                                        <td class="saturdayHoursOpen">
+                                                            9:00AM
+                                                        </td>
+                                                        <td class="saturdayHoursClose">
+                                                            4:00PM
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="sundayHoursRow">
+                                                        <td class="sundayHoursLabel" role="rowheader">
+                                                            Sunday
+                                                        </td>
+                                                        <td class="sundayHoursOpen">
+                                                            Closed
+                                                        </td>
+                                                        <td class="sundayHoursClose">
+                                                            Closed
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hoursDisclaimer">
+                                                        <td style="word-wrap: break-word" colspan="3"><i>Sundays by
+                                                                appointment only.</i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

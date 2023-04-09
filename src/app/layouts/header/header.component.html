@@ -1,4 +1,4 @@
-<div class=" fakeHeadersite mb-4">
+<div class=" fakeHeadersite">
     <div class="header">
         <div class="container">
             <div class="row">
@@ -9,16 +9,18 @@
                 </div>
                 <div class="col-lg-9 col-9 rowMenuMobile">
                     <ul class="float-right ulRight">
-                        <li class="d-lg-inline-block d-none" routerLink="/shop"><a>Shop</a></li>
-                        <li class="d-lg-inline-block d-none" routerLink="/contact"><a>Contact</a></li>
-                        <li class="d-lg-inline-block d-none mr-5" routerLink="/about"><a>About Us</a></li>
+                        <li class=" responForLi" routerLink="/shop"><a>Shop</a></li>
+                        <li class=" responForLi" routerLink="/finance"><a>Finance</a></li>
+                        <li class=" responForLi" routerLink="/brandWarranty"><a>Warranty</a></li>
+                        <li class=" responForLi" routerLink="/contact"><a>Contact</a></li>
+                        <li class=" mr-5 responForLi" routerLink="/about"><a>About Us</a></li>
                         <li class="searchLi">
                             <div class="formSearch">
                                 <input type="text" class="inputSearch" id="inputSearch" [(ngModel)]="keyword" placeholder="Search here" (keyup)="showBoxSearch()">
                                 <i class="fa-solid fa-magnifying-glass ml-1"></i>
                             </div>
                         </li>
-                        <li class="d-lg-none d-inline-block signIn menuMobileButton" (click)="openMenuMobile()" id="butOpenMenu">Menu</li>
+                        <li class="signIn menuMobileButton" (click)="openMenuMobile()" id="butOpenMenu">Menu</li>
                     </ul>
                 </div>
 
@@ -34,11 +36,12 @@
             <i class="fa-solid fa-x"></i>
         </div>
         <div class="list-group">
-            <a routerLink="/" class="list-group-item list-group-item-action"><i class="fa-solid fa-house"></i> Home</a>
-            <a routerLink="/shop" class="list-group-item list-group-item-action"><i class="fa-solid fa-bag-shopping"></i> Shop</a>
-            <a routerLink="/contact" class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
-            <a routerLink="/about" class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
-            <a routerLink="/login" class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
+            <a (click)="closeMenuMobile()" routerLink="/" class="list-group-item list-group-item-action"><i class="fa-solid fa-house"></i> Home</a>
+            <a (click)="closeMenuMobile()" routerLink="/shop" class="list-group-item list-group-item-action"><i class="fa-solid fa-bag-shopping"></i> Shop</a>
+            <a (click)="closeMenuMobile()" routerLink="/finance" class="list-group-item list-group-item-action"><i class="fa-solid fa-coins"></i> Finance</a>
+            <a (click)="closeMenuMobile()" routerLink="/brandWarranty" class="list-group-item list-group-item-action"><i class="fa-solid fa-shield"></i> Warranty</a>
+            <a (click)="closeMenuMobile()" routerLink="/contact" class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
+            <a (click)="closeMenuMobile()" routerLink="/about" class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
         </div>
     </div>
 </div>
@@ -46,14 +49,14 @@
     <div class="boxDetailSearched d-none" id="boxDetailSearched">
         <div class="position-relative">
             <ul>
-                <li class="detailSearch" routerLink="/detail/{{item.id}}" *ngFor="let item of allProduct | search:keyword">
+                <li class="detailSearch" (click)="navigateToDetail(item.id)" *ngFor="let item of allProduct | search:keyword">
                     <div class="row">
-                        <div class="col-3">
-                            <img class="card-img" src="{{item.img}}" alt="">
+                        <div class="col-5">
+                            <img class="card-img" src="{{item.imgProduct}}" alt="">
                         </div>
-                        <div class="col-9">
+                        <div class="col-7">
                             <p class="nameSearched">{{item.name}}</p>
-                            <p class="priceSearched">${{item.sale}}</p>
+                            <p class="priceSearched">${{item.price}}</p>
                         </div>
                     </div>
                 </li>

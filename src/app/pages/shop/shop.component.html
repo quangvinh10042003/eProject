@@ -1,0 +1,278 @@
+<div class="container pageContainer mt-5">
+    <div class="position-relative">
+        <div class="navigatePage">
+            <label class="font-weight-bold mt-1">Page {{pageNum}} of {{numberOfPage}}</label>
+            <div class="row">
+                <div (click)="firstPage()" class="bg-light buttonPages"><i class="fa-solid fa-angles-left"></i> First</div>
+                <div (click)="prevPage()" class="bg-light buttonPages"><i class="fa-solid fa-angle-left"></i> Prev</div>
+                <div class="bg-light buttonPages" *ngFor="let item of listPage,let i=index">
+                    <div class="bg-light" style="width: 100%; height: 100%;" *ngIf="pageNum > 3 && pageNum <=  numberOfPage;else elsePageNum">
+                        <div class="buttonInPages" (click)="chosePage(numberOfPage-5+item)" *ngIf="pageNum > numberOfPage-3; else elsePageSmall">{{numberOfPage-5+item}}</div>
+                        <ng-template #elsePageSmall>
+                            <div class="buttonInPages" (click)="chosePage(item+pageNum-3)">{{pageNum+item-3}}</div>
+                        </ng-template>
+                    </div>
+                    <ng-template #elsePageNum>
+                        <div class="buttonInPages" (click)="chosePage(item)">{{item}}</div>
+                    </ng-template>
+                </div>
+                <div (click)="nextPage()" class="bg-light buttonPages">Next <i class="fa-solid fa-angle-right"></i></div>
+                <div (click)="lastPage()" class="bg-light buttonPages">Last <i class="fa-solid fa-angles-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4 mb-2">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-9 px-0 pl-lg-3 pr-lg-3">
+            <div class="boxSoft">
+                <label for="">Sort by: </label>
+                <select #select (change)="SortPrice(select.value)" class="ml-2 mt-2">
+                    <option value="1">Price: Low to High</option>
+                    <option value="2">Price: High to Low</option>
+                    <option value="3">Year: Low to High</option>
+                    <option value="4">Year: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container allBaiLamCuaThangTruongNgu">
+
+    <div class="row position-relative">
+        <div class="col-lg-3 bg_left position-relative" style="padding: 0;">
+            <div class="cars ">
+                <div class="search">
+                    <span>REFINE SEARCH</span>
+                    <div id="ic" (click)="openMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div class="searchCar">
+                    <div class="ip">
+                        <input type="text" placeholder="Search Inventory" [(ngModel)]="keyword">
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+
+                <nav class="dropdown">
+                    <ul style="padding: 0;margin-bottom: 3px;">
+                        <li>
+                            <div class="title">
+                                <a routerLink="/shop">Car</a>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <ul class="dd_list" *ngFor="let item of listCategory ">
+                                <li routerLink="/shop/{{item.id}}"><a>{{item.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="dropdown">
+                    <ul style="padding: 0;margin-bottom: 3px;">
+                        <li>
+                            <div class="title">
+                                <li>
+                                    <a routerLink="/shop">Year</a>
+
+                                </li>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <ul class="dd_list" *ngFor="let item of yearProduct" (click)="findYear(item.year)">
+                                <li><a>{{item.year}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="dropdown">
+                    <ul style="padding: 0;margin-bottom: 3px;">
+                        <li>
+                            <div class="title">
+                                <li>
+                                    <a routerLink="/shop">Body Style</a>
+
+                                </li>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <ul class="dd_list" *ngFor="let item of CatebodyStyle" (click)="findBodyStyle(item.bodyStyle)">
+                                <li><a>{{item.bodyStyle}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="dropdown">
+                    <ul style="padding: 0;margin-bottom: 3px;">
+                        <li>
+                            <div class="title">
+                                <li>
+                                    <a routerLink="/shop">Exteria Color</a>
+
+                                </li>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <ul class="dd_list" *ngFor="let item of CateColor" (click)="findColor(item.extColor)">
+                                <li><a>{{item.extColor}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="dropdown">
+                    <ul style="padding: 0;margin-bottom: 20px;">
+                        <li>
+                            <div class="title">
+                                <li>
+                                    <a routerLink="/shop">Interia Color</a>
+
+                                </li>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <ul class="dd_list" *ngFor="let item of CateIntColor" (click)="findIntColor(item.intColor)">
+                                <li><a>{{item.intColor}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="modalMenuMobile d-none" id="modalMobileFilter">
+            <div class="menuMobile" id="menuMobile">
+                <div class="title">
+                    <h1>Menu</h1>
+                    <div class="closeMenu" id="but" (click)="closeMenuMobile()">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <div class="searchCar">
+                    <div class="ip">
+                        <input type="text" placeholder="Search Inventory" [(ngModel)]="keyword">
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="list-group ">
+                    <nav class="dropdown_tablet">
+                        <ul style="padding: 0;margin-bottom: 3px;">
+                            <li>
+                                <div class="title">
+                                    <a routerLink="/shop">Car</a>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul class="dd_list" *ngFor="let item of listCategory ">
+                                    <li (click)="closeMenuMobile()" routerLink="/shop/{{item.id}}"><a>{{item.name}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="dropdown_tablet">
+                        <ul style="padding: 0;margin-bottom: 3px;">
+                            <li>
+                                <div class="title">
+                                    <li>
+                                        <a routerLink="/shop">Year</a>
+
+                                    </li>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul class="dd_list" *ngFor="let item of yearProduct" (click)="findYear(item.year)">
+                                    <li><a>{{item.year}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="dropdown_tablet">
+                        <ul style="padding: 0;margin-bottom: 3px;">
+                            <li>
+                                <div class="title">
+                                    <li>
+                                        <a routerLink="/shop">Body Style</a>
+
+                                    </li>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul class="dd_list" *ngFor="let item of CatebodyStyle" (click)="findBodyStyle(item.bodyStyle)">
+                                    <li><a>{{item.bodyStyle}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="dropdown_tablet">
+                        <ul style="padding: 0;margin-bottom: 3px;">
+                            <li>
+                                <div class="title">
+                                    <li>
+                                        <a routerLink="/shop">Exteria Color</a>
+
+                                    </li>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul class="dd_list" *ngFor="let item of CateColor" (click)="findColor(item.extColor)">
+                                    <li><a>{{item.extColor}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="dropdown_tablet">
+                        <ul style="padding: 0;margin-bottom: 20px;">
+                            <li>
+                                <div class="title">
+                                    <li>
+                                        <a routerLink="/shop">Interia Color</a>
+
+                                    </li>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <ul class="dd_list" *ngFor="let item of CateIntColor" (click)="findIntColor(item.intColor)">
+                                    <li><a>{{item.intColor}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div *ngFor="let item of listProduct | search:keyword, let i=index">
+                <div class="product" *ngIf="i>=startOfProduct && i <= endOfProduct">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="image">
+                                <img src="{{item.imgProduct}}" alt="" width="100%">
+                            </div>
+                            <div class="view">
+                                <span routerLink="/detail/{{item.id}}"><i class="fa-solid fa-camera"></i> VIEW OPTIONS</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-4">
+                            <!-- routerLink ==>detail  -->
+                            <h5>{{item.name}}</h5>
+                            <h6>Year: <span> {{item.year}}</span></h6>
+                            <h6>Engine:<span>{{item.engine}}</span></h6>
+                            <h6>Mileage: <span>{{item.Mileage}}</span></h6>
+                            <h6>BodyStyle: <span>{{item.bodyStyle}}</span></h6>
+                            <h6>Interior Color: <span>{{item.intColor}}</span></h6>
+                            <h6>Exterior Color: <span>{{item.extColor}}</span></h6>
+                        </div>
+                        <div class="col-lg-3 col-md-4 mg-top">
+                            <div class="price">
+                                <h5>Price : ${{item.price}}</h5>
+                            </div>
+                            <div class="request">
+                                <span routerLink="/contact">REQUEST SALE PRICE</span>
+                            </div>
+                            <div class="qualified">
+                                <span routerLink="/detail/{{item.id}}">QUALIFIED NOW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
